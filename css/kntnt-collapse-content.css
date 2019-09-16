@@ -1,0 +1,49 @@
+.kntnt-collapse-content {
+    margin: 2em auto;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 15px rgba(216, 216, 216, 0.5);
+}
+
+.kntnt-collapse-content > div:not(:last-child) {
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.kntnt-collapse-content > div > div {
+    padding: 1em;
+}
+
+.kntnt-collapse-content > div > div:first-child {
+    background-color: #ccc;
+    color: #333;
+}
+
+.kntnt-collapse-content > div > div > * {
+    margin: 0;
+}
+
+.kntnt-collapse-content.single > div > div:first-child,
+.kntnt-collapse-content.multiple > div > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.kntnt-collapse-content.single > div > div:first-child::before,
+.kntnt-collapse-content.multiple > div > div:first-child::before {
+    content: '';
+    margin-right: 1em;
+    border: solid #333;
+    border-width: 0 4px 4px 0;
+    padding: 4px;
+    transform: rotate(-45deg);
+    transition: transform 0.4s linear;
+}
+
+.kntnt-collapse-content > div.open > div:first-child::before {
+    transform: rotate(45deg);
+    transition: transform 0.4s linear;
+}
+
+.kntnt-collapse-content.single > div > div:first-child > *,
+.kntnt-collapse-content.multiple > div > div:first-child > * {
+    margin-top: 0.1em; /* Compansates text not optical centered */
+}
