@@ -1,4 +1,4 @@
-$(function () {
+jQuery( document ).ready(function( $ ) {
 
     $(".kntnt-collapse-content > div > div:last-child").slideUp("slow");
 
