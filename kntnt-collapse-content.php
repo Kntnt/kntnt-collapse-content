@@ -5,8 +5,9 @@
  * @wordpress-plugin
  * Plugin Name:       Kntnt Collapse Content
  * Plugin URI:        https://www.kntnt.com/
+ * GitHub Plugin URI: https://github.com/Kntnt/kntnt-collapse-content
  * Description:       Adds shortcode that collapse content into an accordion.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-3.0+
