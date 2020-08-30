@@ -1,23 +1,19 @@
-jQuery( document ).ready(function( $ ) {
-
-    $(".kntnt-collapse-content > div > div:last-child").slideUp("slow");
-
-    $(".kntnt-collapse-content > div > div:first-child").click(function (e) {
-
+jQuery(document).ready(function ($) {
+    $('.kntnt-collapse-content > div > .kntnt-collapse-content-body').slideUp('slow');
+    $('.kntnt-collapse-content > div > .kntnt-collapse-content-heading').click(function (e) {
         e.preventDefault();
-
-        var $tab = $(this).parent();
-
-        var is_single = $tab.parent().hasClass("single");
-
-        $tab.toggleClass("open");
-        $tab.children(":last-child").slideToggle("slow");
-
-        if (is_single) {
-            $tab.siblings().removeClass("open");
-            $tab.siblings().children(":last-child").slideUp("slow");
+        let $heading = $(this);
+        let $body = $heading.next();
+        let $panel = $heading.parent();
+        let $container = $panel.parent();
+        $panel.toggleClass('open');
+        $body.slideToggle('slow');
+        if ($container.hasClass('single')) {
+            $panel.siblings('.open').each(function () {
+                let $this = $(this);
+                $this.removeClass('open');
+                $this.children('.kntnt-collapse-content-body').slideUp('slow');
+            });
         }
-
     });
-
 });
