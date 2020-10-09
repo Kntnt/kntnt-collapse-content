@@ -7,7 +7,7 @@
  * Plugin URI:        https://www.kntnt.com/
  * GitHub Plugin URI: https://github.com/Kntnt/kntnt-collapse-content
  * Description:       Adds shortcode that collapse content into an accordion.
- * Version:           1.1.0
+ * Version:           1.2.0
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-3.0+
@@ -37,9 +37,13 @@ class Plugin {
     ];
 
     public function __construct() {
+        add_action( 'wp_enqueue_scripts', [$this, 'register_resources'] );
         add_shortcode( 'collapse', [ $this, 'collapse_content' ] );
-        wp_register_style( 'kntnt-collapse-content.css', plugins_url( '/css/kntnt-collapse-content.css', __FILE__ ), [], '1.1.0' );
-        wp_register_script( 'kntnt-collapse-content.js', plugins_url( '/js/kntnt-collapse-content.js', __FILE__ ), [ 'jquery' ], '1.1.0', true );
+    }
+    
+    public function register_resources() {
+        wp_register_style( 'kntnt-collapse-content.css', plugins_url( '/css/kntnt-collapse-content.css', __FILE__ ), [], '1.2.0' );
+        wp_register_script( 'kntnt-collapse-content.js', plugins_url( '/js/kntnt-collapse-content.js', __FILE__ ), [ 'jquery' ], '1.2.0', true );
     }
 
     public function collapse_content( $atts, $content, $tag ) {
