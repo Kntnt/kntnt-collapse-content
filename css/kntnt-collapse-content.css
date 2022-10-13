@@ -8,8 +8,12 @@
     border-bottom: 1px solid #f7f7f7;
 }
 
-.kntnt-collapse-content > div > div {
-    padding: 1em;
+.kntnt-collapse-content > div > :first-child {
+  padding: 1em;
+}
+
+.kntnt-collapse-content > div > :last-of-type {
+  padding: 1em 2em;
 }
 
 .kntnt-collapse-content > div > div:first-child {
